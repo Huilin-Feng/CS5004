@@ -1,3 +1,6 @@
+/**
+ * Represents a shoe with a kind, color, brand, and size.
+ */
 public class Shoe {
 
   private final Kind kind;
@@ -5,9 +8,19 @@ public class Shoe {
   private final Brand brand;
   private final double size;
 
+  /**
+   * Constructs a Shoe with the given attributes.
+   *
+   * @param kind  the kind of the shoe
+   * @param color the color of the shoe
+   * @param brand the brand of the shoe
+   * @param size  the size of the shoe
+   *
+   * @throws IllegalArgumentException if the brand is NIKE and the kind is DRESS
+   */
   public Shoe(Kind kind, Color color, Brand brand, double size) {
     if (brand == Brand.NIKE && kind == Kind.DRESS) {
-      throw new IllegalArgumentException("NIKE does not sell dress shoes.");
+      throw new IllegalArgumentException("NIKE does not sell dress shoes");
     }
     this.kind = kind;
     this.color = color;
@@ -15,82 +28,49 @@ public class Shoe {
     this.size = size;
   }
 
+  /**
+   * Gets the kind of this shoe.
+   *
+   * @return the shoe kind
+   */
   public Kind getKind() {
     return kind;
   }
 
+  /**
+   * Gets the color of this shoe.
+   *
+   * @return the shoe color
+   */
   public Color getColor() {
     return color;
   }
 
+  /**
+   * Gets the brand of this shoe.
+   *
+   * @return the shoe brand
+   */
   public Brand getBrand() {
     return brand;
   }
 
+  /**
+   * Gets the size of this shoe.
+   *
+   * @return the shoe size
+   */
   public double getSize() {
     return size;
   }
 
   /**
-   * Returns a summary of this shoe including brand, color, kind, and size.
+   * Returns a string representation of this shoe.
    *
-   * @return a string summary of this shoe
+   * @return a string containing the kind, color, brand, and size of the shoe
    */
   @Override
   public String toString() {
-    String kindStr;
-    switch (kind) {
-      case SNEAKER:
-        kindStr = "Sneaker";
-        break;
-      case BOOT:
-        kindStr = "Boot";
-        break;
-      case DRESS:
-        kindStr = "Dress";
-        break;
-      case SANDAL:
-        kindStr = "Sandal";
-        break;
-      default:
-        kindStr = kind.toString();
-    }
-
-    String brandStr;
-    switch (brand) {
-      case NIKE:
-        brandStr = "Nike";
-        break;
-      case ADIDAS:
-        brandStr = "Adidas";
-        break;
-      case PUMA:
-        brandStr = "Puma";
-        break;
-      case VANS:
-        brandStr = "Vans";
-        break;
-      default:
-        brandStr = brand.toString();
-    }
-
-    // Color: do NOT provide a case for every color; rely on default for some.
-    String colorStr;
-    switch (color) {
-      case BLACK:
-        colorStr = "Black";
-        break;
-      case WHITE:
-        colorStr = "White";
-        break;
-      case RED:
-        colorStr = "Red";
-        break;
-      default:
-        colorStr = "Neutral";
-    }
-
-    return brandStr + " " + colorStr + " " + kindStr + " (size " + size + ")";
+    return brand + " " + kind + " " + color + " size " + size;
   }
-
-}   // ← **整个文件只在这里关一次 class**
+}
