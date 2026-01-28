@@ -31,8 +31,19 @@ public class ShoeTest {
 
     assertTrue(s.contains("adidas"));
     assertTrue(s.contains("boot"));
-    assertTrue(s.contains("white") || s.contains("neutral"));
+    assertTrue(s.contains("neutral"));
     assertTrue(s.contains("size 7.0"));
+  }
+
+  @Test
+  public void testToStringColorCaseBlack() {
+    Shoe shoe = new Shoe(Kind.SNEAKER, Color.BLACK, Brand.NIKE, 8.5);
+    String s = shoe.toString().toLowerCase();
+
+    assertTrue(s.contains("nike"));
+    assertTrue(s.contains("sneaker"));
+    assertTrue(s.contains("black"));
+    assertTrue(s.contains("size 8.5"));
   }
 }
 

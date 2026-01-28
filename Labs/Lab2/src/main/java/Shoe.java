@@ -71,6 +71,31 @@ public class Shoe {
    */
   @Override
   public String toString() {
-    return brand + " " + kind + " " + color + " size " + size;
+    String brandStr;
+    switch (brand) {
+      case NIKE -> brandStr = "Nike";
+      case ADIDAS -> brandStr = "Adidas";
+      case PUMA -> brandStr = "Puma";
+      case VANS -> brandStr = "Vans";
+      default -> brandStr = brand.toString();
+    }
+
+    String kindStr;
+    switch (kind) {
+      case SNEAKER -> kindStr = "Sneaker";
+      case BOOT -> kindStr = "Boot";
+      case DRESS -> kindStr = "Dress";
+      case SANDAL -> kindStr = "Sandal";
+      default -> kindStr = kind.toString();
+    }
+
+    String colorStr;
+    switch (color) {
+      case BLACK -> colorStr = "Black";
+      case RED -> colorStr = "Red";
+      default -> colorStr = "Neutral";
+    }
+
+    return brandStr + " " + kindStr + " " + colorStr + " size " + size;
   }
 }
