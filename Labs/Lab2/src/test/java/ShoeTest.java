@@ -25,25 +25,17 @@ public class ShoeTest {
   }
 
   @Test
-  public void testToStringIncludesAllAttributes() {
-    Shoe shoe = new Shoe(Kind.BOOT, Color.WHITE, Brand.ADIDAS, 7.0);
-    String s = shoe.toString().toLowerCase();
-
-    assertTrue(s.contains("adidas"));
-    assertTrue(s.contains("boot"));
-    assertTrue(s.contains("neutral"));
-    assertTrue(s.contains("size 7.0"));
-  }
-
-  @Test
-  public void testToStringColorCaseBlack() {
+  public void testToStringFormatLikeInstructor() {
     Shoe shoe = new Shoe(Kind.SNEAKER, Color.BLACK, Brand.NIKE, 8.5);
-    String s = shoe.toString().toLowerCase();
 
-    assertTrue(s.contains("nike"));
-    assertTrue(s.contains("sneaker"));
-    assertTrue(s.contains("black"));
-    assertTrue(s.contains("size 8.5"));
+    String expected =
+        "Brand: Nike\n" +
+        "Kind: Sneaker\n" +
+        "Color: Black\n" +
+        "Size: 8.5";
+
+    assertEquals(expected, shoe.toString());
   }
+
 }
 

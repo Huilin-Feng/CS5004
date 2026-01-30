@@ -92,10 +92,14 @@ public class Shoe {
     String colorStr;
     switch (color) {
       case BLACK -> colorStr = "Black";
+      case WHITE -> colorStr = "White"; // 更稳：WHITE 单独一个 case
       case RED -> colorStr = "Red";
-      default -> colorStr = "Neutral";
+      default -> colorStr = "Neutral";  // 例如 BEIGE 走这里，符合“别给每个颜色写 case”
     }
 
-    return brandStr + " " + kindStr + " " + colorStr + " size " + size;
+    return "Brand: " + brandStr + "\n"
+        + "Kind: " + kindStr + "\n"
+        + "Color: " + colorStr + "\n"
+        + "Size: " + size;
   }
 }
