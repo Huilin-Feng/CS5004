@@ -73,6 +73,9 @@ public class Triangle extends AbstractShape {
 
   @Override
   public Shape resize(double factor) {
+    if (factor <= 0) {
+      throw new IllegalArgumentException("Resize factor must be positive.");
+    }
     double sqrtFactor = Math.sqrt(factor);
 
     double x1 = this.reference.getX();
